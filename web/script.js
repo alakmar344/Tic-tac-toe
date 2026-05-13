@@ -57,7 +57,6 @@ function resetGame() {
   gameEnded = false;
   cells.forEach((cell, index) => {
     cell.disabled = false;
-    board[index] = "";
     renderCell(index);
   });
   setStatus("Player X's turn");
