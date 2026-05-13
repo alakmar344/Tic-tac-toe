@@ -15,7 +15,7 @@ npm test
 ## Build APK locally
 
 ```bash
-gradle :app:assembleDebug
+./gradlew :app:assembleDebug
 ```
 
 The APK is generated at:
