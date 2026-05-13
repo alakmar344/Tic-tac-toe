@@ -1,0 +1,102 @@
+:root {
+  color-scheme: dark;
+  --bg: #060611;
+  --card: #10102a;
+  --line: #2f2f62;
+  --x: #0ef;
+  --o: #ff2df7;
+  --text: #e9edff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #17173f 0%, var(--bg) 55%);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+}
+
+.app {
+  width: min(92vw, 420px);
+}
+
+.game-card {
+  padding: 1.25rem;
+  border: 1px solid #2b2b59;
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--card) 94%, black);
+  box-shadow: 0 0 22px #0ef5, 0 0 24px #ff2df744;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+}
+
+#status {
+  margin: 0 0 1rem;
+  text-align: center;
+  min-height: 1.5rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: #0d0d24;
+  color: var(--text);
+  font-size: clamp(2rem, 9vw, 2.9rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.cell:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.cell:enabled:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 14px #ffffff22;
+}
+
+.cell.x {
+  color: var(--x);
+  text-shadow: 0 0 7px var(--x);
+}
+
+.cell.o {
+  color: var(--o);
+  text-shadow: 0 0 7px var(--o);
+}
+
+.restart {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid #3f3f79;
+  border-radius: 0.8rem;
+  background: #121235;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.restart:hover,
+.restart:focus-visible {
+  box-shadow: 0 0 14px #0ef4;
+}
